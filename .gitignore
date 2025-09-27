@@ -1,0 +1,5 @@
+# Ignore files that contain private information
+.env
+
+# Ignore the virtual environment folder
+env/

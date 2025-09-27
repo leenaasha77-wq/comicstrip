@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Comic Strip Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 AI Comic Strip Generator</h1>
+        <p>Enter a story idea, select a tone, and watch the AI bring it to life in a 4-panel comic!</p>
+        
+        <div class="form-container">
+            <textarea id="story-idea" placeholder="e.g., A cat who wants to become an astronaut"></textarea>
+            <div class="controls">
+                <select id="tone-select">
+                    <option value="funny">😂 Funny</option>
+                    <option value="dramatic">🎭 Dramatic</option>
+                    <option value="sad">😢 Sad</option>
+                    <option value="wholesome">💖 Wholesome</option>
+                    <option value="sci-fi">🚀 Sci-Fi</option>
+                </select>
+                <button id="generate-btn">Generate Comic</button>
+            </div>
+        </div>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Generating your comic... this can take a minute!</p>
+        </div>
+
+        <div id="comic-strip-container">
+            </div>
+
+        <button id="save-pdf-btn" class="hidden">Save as PDF</button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
